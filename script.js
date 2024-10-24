@@ -129,6 +129,7 @@ const navigationpart=()=>{
 const optionpart=()=>{
     
     document.querySelector(".optionsul").addEventListener('click',(event)=>{
+            localStorage.setItem('flag',"yes")
             localStorage.setItem('selected',JSON.stringify(event.target.innerHTML))
             changecolor(event.target);
         });
@@ -220,7 +221,9 @@ const submitpart=()=>{
     
     submit.addEventListener('click',()=>{
        
-        document.querySelector(`.div${currjson+1}`).style.backgroundColor="green";
+        if(localStorage.getItem('flag')=="yes"){
+
+            document.querySelector(`.div${currjson+1}`).style.backgroundColor="green";
         setdata(currjson+1);
         localStorage.setItem('index',JSON.stringify(currjson+1));
         currjson++;
@@ -228,12 +231,13 @@ const submitpart=()=>{
         document.querySelector(".messege").innerHTML="";
 
         let check=localStorage.getItem('status');
-        if(check=="correct"&&score<=40){
+        if(check==="correct"&&score<=40){
             score+=4;
         }
 
         else{
             score-=1;
+        }
         }
         
        
