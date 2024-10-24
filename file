@@ -1,0 +1,102 @@
+document.addEventListener('DOMContentLoaded',()=>{
+    let back=document.querySelector(".goback");
+    let navigationbar=document.querySelector(".navigationbarmain");
+    let navigation=document.querySelector(".navigationbar");
+    let question=document.querySelector(".q");
+    
+const getdata= async ()=>{
+  
+    try {
+        let response=await fetch("https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple");
+        let data=  await response.json();
+        await localStorage.setItem('dataarray',JSON.stringify(data.results));
+    } 
+    catch (error) {
+        alert("server is busy");
+    }
+    
+    
+}
+
+
+const setdata=(count)=>{
+    try {
+        let itr=0;
+        let data=localStorage.getItem("dataarray");
+        let parseddata=JSON.parse(data);
+        question.innerHTML=parseddata[`${count}`].question;
+        let randomNum = Math.floor(Math.random() * 4);
+        document.querySelector(`.opt${randomNum}`).innerHTML=parseddata[count].correct_answer;
+        for(let i=0;i<=3;i++){
+            if(i!=randomNum){
+                document.querySelector(`.opt${i}`).innerHTML=parseddata[count].incorrect_answers[itr++];
+            }
+        }
+        
+    } 
+    catch (error) {
+        
+    }
+}
+
+
+const navigationpart=()=>{
+
+    back.addEventListener('click',()=>{
+        navigationbar.style.visibility="hidden"
+        
+    }) 
+
+    navigation.addEventListener('click',()=>{
+        navigationbar.style.visibility="visible";
+    })
+
+    setdata(0);
+    localStorage.setItem('index',JSON.stringify(0));
+    document.querySelector(".numbers").addEventListener('click',(event)=>{
+        localStorage.setItem('index',JSON.stringify(event.target.innerHTML-"1"));
+         event.target.style.backgroundColor="green";
+         setTimeout(()=>{
+            setdata(event.target.innerHTML-"1");
+            event.target.style.backgroundColor="transparent";
+        },500)
+         
+         
+    })
+}
+   
+const optionpart=()=>{
+    
+    document.querySelector('.optionsul').addEventListener('click', function(event) {
+         
+            localStorage.setItem('selected',JSON.stringify(event.target.innerHTML))
+            changecolor();
+        });
+      
+
+   
+}
+
+const changecolor=()=>{
+    let data=localStorage.getItem("dataarray");
+    let parseddata=JSON.parse(data);
+    let ans=JSON.parse(localStorage.getItem('selected'));
+    let compare=JSON.parse(localStorage.getItem('index'));
+    if(ans==parseddata[compare].correct_answer){
+        console.log("hurray");
+    }
+    else{
+        console.log(parseddata[compare].correct_answer);
+        
+    }
+  
+    
+}
+
+getdata();
+optionpart();
+navigationpart();
+
+
+
+})

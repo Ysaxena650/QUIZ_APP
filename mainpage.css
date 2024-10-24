@@ -1,0 +1,345 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom right,#1cf25b,#83f991,#1cf25b);
+    background-image: linear-gradient(to bottom right,#3b0282,#cd82fa,#a45cfc,#cd82fa,#3b0282);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.header{
+    width: 95vw;
+    height: 6rem;
+    position: absolute;
+    top: .5rem;
+    border-radius: .4rem;
+}
+
+.opacityheader{
+    width: 100%;
+    height: 100%;
+    background-color:white;
+    opacity: .5;
+    border-radius: .4rem;
+    position: absolute;
+}
+
+.infoheader{
+    width: 100%;
+    height: 100%;
+    border-radius: .4rem;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.name{
+    width: 10%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    font-family:'DynaPuff' ;
+    border-radius: .4rem;
+}
+
+.mode{
+    width: 18%;
+    height: 90%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family:'DynaPuff' ;
+    
+    border-radius: .4rem;
+}
+
+.navigationbar{
+    width: 16%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family:'DynaPuff' ;
+    cursor: pointer;
+    border-radius: .4rem;
+}
+
+.timer{
+   
+    width: 10%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    font-family:'DynaPuff' ;
+    border-radius: .4rem;
+}
+
+.upper{
+    width: 20%;
+    height: 30%;
+    background-color: #9d54f7;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    border: .1rem solid black;
+}
+
+.mover{
+    height: 80%;
+    width: 1rem;
+    background-color: aliceblue;
+    border-radius: 50%;
+    border: 4px solid black;
+}
+
+.questionbox{
+    width: 95vw;
+    height: 65vh;
+    position: absolute;
+    top: 7.7rem;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+
+.question{
+    width: 96%;
+    height: 96%;
+    position: absolute;
+    z-index: 1;
+    font-weight: bolder;
+    font-family: 'DynaPuff' ;
+    font-size:1.5rem;
+    cursor: pointer;
+    
+}
+
+.opacityquestion{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    opacity: .5;
+    border-radius: 1rem;
+    position: absolute;
+    font-family: 'DynaPuff' ;
+    
+}
+
+.footer{
+    width: 95vw;
+    height: 6rem;
+    position: absolute;
+    bottom: 0;
+    border-radius: 1rem;
+    font-family: 'DynaPuff' ;
+    font-size:1.2rem;
+    font-weight: bold;
+}
+
+.opacityfooter{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    opacity: .5;
+    border-radius: 1rem;
+}
+
+.contentfooter{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    position: absolute;
+    z-index: 1;
+    
+}
+
+.previous{
+    width: 10%;
+    height: 60%;
+    background-color: #a01eeb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    
+}
+
+.next{
+    width: 10%;
+    height: 60%;
+    background-color: #a01eeb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.review{
+    width: 10%;
+    height: 60%;
+    background-color: #a01eeb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.end{
+    width: 10%;
+    height: 60%;
+    background-color: #a01eeb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+.submit{
+    width: 10%;
+    height: 60%;
+    background-color: #a01eeb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.submit:hover , .next:hover, .previous:hover, .review:hover, .end:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.q{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.options{
+    width: 100%;
+    height: 70%;
+    
+}
+
+.options ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.options ul li{
+    height: 3.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+   
+}
+
+.options ul li p:hover{
+    border: 2px solid black;
+}
+
+.options ul li p{
+    font-size: 1.8rem;
+}
+
+
+.navigationbarmain{
+  width: 35vw;
+  height: 70vh;
+  background-image: linear-gradient(to top right,#3b0282,#cd82fa);
+  position: absolute;
+  top: 0.4rem;
+  right: 2.3rem;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  gap: 5rem;
+  visibility: hidden;
+}
+
+.navhead{
+    width: 100%;
+    height: 3rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family:'DynaPuff'  ;
+}
+
+.numbers{
+    width: 80%;
+    height: 65%;
+    display:flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.numbers div{
+    width: 4rem;
+    height: 4rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'DynaPuff';
+}
+
+.goback{
+    font-weight: bolder;
+    font-size: 1rem;
+    border: 1px solid black;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    font-family: 'DynaPuff';
+}
+
+.numbers div{
+    cursor: pointer;
+}
